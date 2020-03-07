@@ -1,0 +1,42 @@
+<div class="widget about-me">
+    <div class="row">
+        <div class="col-md-5">
+            <img src="/icons/wx.jpg" alt="公众号" class="img-responsive center-block">
+        </div>
+        <div class="col-md-7">
+            <a class="series-a" href="javascript:void(0)">公众号</a>
+            <ul>
+                <li>• 技术干货推送</li>
+                <li>• 免费资料领取</li>
+                <li><b>• 扫码领取更多惊喜</b></li>
+            </ul>
+        </div>
+    </div>
+    <% if (is_home()){ %>
+        <hr class="divider-hr">
+        <div class="content social">
+            <% theme.social.forEach(function (item) { %>
+                <a href="<%- item.href %>" rel="external nofollow" title="<%- item.name %>" target="_blank">
+                    <i class="<%- item.icon %> fa fa-<%- item.icon %>"></i>
+                </a>
+            <% }) %>
+        </div>
+    <% }else{ %>
+<!--        <div class="row">-->
+<!--            <div class="col-md-5">-->
+<!--                <img src="/icons/xcx.jpg" alt="小程序" class="img-responsive">-->
+<!--            </div>-->
+<!--            <div class="col-md-7">-->
+<!--                <a class="series-a" href="javascript:void(0)">小程序</a>-->
+<!--                <ul>-->
+<!--                    <li>• 原创笔记</li>-->
+<!--                    <li>• 独家心法</li>-->
+<!--                    <li><b>• 扫码领取</b></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+    <% } %>
+</div>
+
+
+

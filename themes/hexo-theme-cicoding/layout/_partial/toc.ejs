@@ -1,0 +1,10 @@
+<% if(theme.toc && toc(page.content)){ %>
+    <div class="toc-article">
+        <strong>
+            <%= __('toc') %>
+        </strong>
+        <div class="toc-content">
+            <%- toc(page.content, {list_number: false}) %>
+        </div>
+    </div>
+<% } %>

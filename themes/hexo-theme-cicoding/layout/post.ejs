@@ -1,0 +1,113 @@
+<% if (theme.ad.adExhibition){ %>
+    <% if (theme.ad.innerBanner && theme.ad.innerBanner.length){ %>
+        <div class="ad">
+            <div class="row">
+                <% theme.ad.innerBanner.forEach(function (item) { %>
+                    <div class="col-md-<%= 12 / theme.ad.innerBanner.length %>">
+                        <a href="<%= item.targetUrl %>" rel="nofollow" target="_blank">
+                            <img class="img-responsive center-block"
+                                 src="<%= item.imgUrl %>"
+                                 title="<%= item.title %>"
+                            >
+                        </a>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    <% } %>
+<% } %>
+
+<p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="<%= page.title %>">
+            <% if(page.link){ %>
+                <a href="<%- url_for(page.link) %>" target="_blank"><%= page.title %></a>
+            <% }else{ %>
+                <%= page.title || 'NO Title!' %>
+            <% } %>
+        </h1>
+        <%- partial('_partial/article-meta', {post: page}) %>
+        <%
+        var diffDays = moment(new Date()).diff(moment(page.date), 'day');
+        var warningTextArr = theme.warning.text.split("%d");
+        %>
+        <% if((theme.warning.days != 0) && diffDays > (theme.warning.days || 300)){ %>
+            <p class="fa fa-exclamation-triangle warning">
+                <%- warningTextArr[0] %><strong><%= diffDays %></strong><%- warningTextArr[1] %>
+            </p>
+        <% } %>
+    </div>
+    <%- partial('_partial/gallery', {post: page}) %>
+    <div class="post-body post-content" id="container">
+        <%- partial('_partial/toc', null, {cache:false}) %>
+        <%- page.content %>
+        <%- related_posts(page, site.posts) %>
+    </div>
+    <% if(theme.reward.alipay || theme.reward.wepay){ %>
+        <%- partial('_partial/reward') %>
+    <% } %>
+
+
+    <% if(theme.declaration.enable){ %>
+        <div class="post-footer">
+            <div class="col-sm-10">
+                <div>
+                    <b>本文链接</b>：<a href="<%- url_for(page.path) %>" target="_blank"><%- page.title %></a>
+                </div>
+                <div>
+                    <% if(theme.declaration.enable){ %>
+                        <%- theme.declaration.title %>：<%- theme.declaration.tip %><%- theme.cc %>
+                    <% } %>
+                </div>
+                <div>
+                    <% if(theme.cc){ %>
+                        <%= __('post_licence') %>: <%- theme.cc %>
+                    <% } %>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <img src="/icons/wx.jpg" width=100%/>
+            </div>
+        </div>
+    <% } %>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    <% if(page.prev){ %>
+        <a target="_blank" href="<%- url_for(page.prev.path) %>" class="pre-post btn btn-default"
+           title='<%- page.prev.title %>'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs"><%- page.prev.title %></span>
+        </a>
+    <% } %>
+    <% if(page.next){ %>
+        <a target="_blank" href="<%- url_for(page.next.path) %>" class="next-post btn btn-default"
+           title='<%- page.next.title %>'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs"><%- page.next.title %></span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    <% } %>
+</div>
+
+<% if(page.comments){ %>
+    <div id="comments">
+        <%- partial('_vendor/comments/index', {page: page}) %>
+    </div>
+<% } %>
+
+<%if(theme.openwrite){%>
+    <script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+    <script>
+        const btw = new BTWPlugin();
+        btw.init({
+            id: 'container',
+            blogId: '16776-1570773975500-608',
+            name: '筱进GG',
+            qrcode: 'http://www.cicoding.cn/icons/wx.jpg',
+            keyword: 'more',
+        });
+    </script>
+<%}%>
+
+

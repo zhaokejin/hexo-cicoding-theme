@@ -1,0 +1,345 @@
+# ---------------------------------------------------------------
+#   Site Information And Theme Configuration Settings
+#   language: zh-CN
+# ---------------------------------------------------------------
+
+## menu
+menu:
+  - page: 首页
+    url: /
+    icon: fa-home
+#  - page: 分类
+#    url: /categories
+#    icon: fa-sort
+
+  - page: 归档
+    url: /archives
+    icon: fa-sort
+#  - page: 微服务
+#    url: /micro-service/microservice/
+#    icon: fa-server
+  - page: 系列教程
+    icon: fa-fire
+    subPages:
+      - page: Docker系列教程
+        url: /docker/00-docker-lession-index
+      - page: 微服务架构
+        url: /micro-service/microservice/
+#      - page: Spring Boot系列教程
+#        url: /spring-boot/spring-boot-index
+#  - page: 开源书
+#    icon: fa-book
+#    subPages:
+#      - page: RocketMQ开发者指南
+#        url: /books/rocketmq
+#        icon: fa-rocket
+#  - page: 工具
+#    icon: fa-cog
+#    subPages:
+#      - page: 微信排版工具1.0
+#        url: /tools/markdown
+#      - page: 微信排版工具2.0
+#        url: /tools/markdown2
+  - page: 在线文档
+    icon: fa-book
+    subPages:
+#      - page: Vue官方文档
+#        url: https://cn.vuejs.org/v2/api/
+#      - page: Vuex官方文档
+#        url: https://vuex.vuejs.org/zh/api/#vuex-store
+      - page: Spring Reference
+        url: https://spring.io/docs/
+      - page: SpringBoot Reference
+        url: https://spring.io/projects/spring-boot/
+      - page: SpringCloud Reference
+        url: https://spring.io/projects/spring-cloud/
+      - page: Spring Security Reference
+        url: https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/
+  - page: 在线工具
+    icon: fa-gear
+    subPages:
+      - page: 代码格式化
+        url: http://tool.oschina.net/codeformat/
+      - page: JSON编辑器
+        url: https://www.bejson.com/jsoneditoronline
+  - page: JRebel激活
+    url: /other/jrebel-activation
+    icon: fa-fire
+  - page: 关于我
+    url: /about
+    icon: fa-user
+## favicon图标
+favicon: /favicon.png
+
+## Feed
+rss: /atom.xml
+
+## Carousel
+carousel:
+  img:
+  url:
+
+# 各个小工具的设置
+
+## widgets
+widgets:
+  # 公众号
+  - aboutme
+  # 网站公告
+  - notification
+  # 广告
+  - ad
+  # 系列课程
+  # - series
+  # 分类
+  - category
+  # 标签
+  - tagcloud
+  # 归档
+  - archive
+  # 社交
+  - social
+  # 友情链接
+  - friends
+# 广告位
+ad:
+  adExhibition: true
+  # 首页侧边栏广告位
+  sidebar:
+    title: 阿里全民云计算
+    targetUrl: https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=qhtujh03
+    imgUrl: /icons/380-120.png
+  # 内页页头banner广告位
+  innerBanner:
+    - title: 阿里全民云计算
+      targetUrl: https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=qhtujh03
+      imgUrl: /icons/810x100.png
+
+## 搜索
+jsonContent:
+  searchLocal: true
+  searchGoogle: false
+  posts:
+    title: true
+    text: true
+    content: true
+    categories: false
+    tags: false
+
+
+## 网站公告设置
+notification: |-
+            <p>
+              <b>笔者微信</b>：210006540，欢迎加我<br/>
+              <b>公众号</b>：请扫描我的头像<br/>
+              <b>QQ群</b>：<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=85cfa5c4c8fbe9859b7166a33d84c32f2def325c4d29f35f299a5756a955ab21">806951874</a><br/>
+            </p>
+
+## 社交设置a
+social:
+  - name: GitHub
+    icon: github
+    href: //github.com/zhaokejin
+  - name: Gitee
+    icon: git
+    href: //gitee.com/zhaokejin
+  - name: 邮箱
+    icon: envelope-o
+    href: mailto:210006540qq.com
+#  - name: 看书
+#    icon: book
+#    href: //www.baidu.com
+  - name: QQ
+    icon: qq
+    href: //wpa.qq.com/msgrd?v=3&uin=210006540&site=qq&menu=yes
+  - name: QQ群
+    icon: group
+    href: //shang.qq.com/wpa/qunwpa?idkey=7b19717710dcc2c78996f316db3ab3365bde39bc3c60de7a6c59fe07231e231a
+  - name: RSS
+    icon: feed
+    href: /atom.xml
+
+## 文章分类设置
+cate_config:
+  show_count: true
+  show_current: true
+
+## 文章归档设置
+arch_config:
+  type: 'monthly'
+  format: 'YYYY年MM月'
+  show_count: true
+  order: -1
+
+## 标签云设置
+tagcloud:
+  tag3d: true
+  textColour: '#444'
+  outlineMethod: 'block'
+  outlineColour: '#FFDAB9'
+  interval: 30
+  freezeActive: true
+  frontSelect: true
+  reverse: true
+  wheelZoom: false
+
+## 友链设置
+links:
+  - 伊成博客: http://www.devcheng.net
+  - 泰安软件定制开发: http://www.zcharm.cn
+  - 君无邪: https://www.java214.com
+  - 答案: http://www.aquestian.cn
+
+
+# 主题自定义个性化配置
+
+## 网站宣传语
+branding:
+
+## 设置banner背景图片
+banner:
+  img:
+
+## 首页列表底部面板
+homePanel: true
+
+## 缩略图自定义随机图片
+defaultImgs:
+  -
+
+  ## 截取文章首页描述字数
+excerptLength: 200
+
+## 是否开启文章目录
+toc: true
+
+## 代码高亮配置
+highlightTheme:
+
+## bootstrap配置
+bootstrap:
+
+## ICON配置
+fontAwesome:
+
+## 文章过期提醒功能
+warning:
+  days: 30000
+  text: '本文于%d天之前发表，文中内容可能已经过时。'
+
+## 文章内声明
+declaration:
+  enable: true
+  title: '转载声明'
+#  tip: '本博客由周立创作，采用
+#    <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+#    CC BY 3.0 CN
+#    </a>
+#    许可协议。可自由转载、引用，但需署名作者且注明文章出处。如转载至微信公众号，请在文末添加作者公众号二维码。'
+  tip: '本博客由筱进GG创作，采用
+    <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+    CC BY 3.0 CN
+    </a>
+    许可协议。可自由转载、引用，但需署名作者且注明文章出处。如转载至微信公众号，请在文末添加作者公众号二维码。'
+
+## 文章打赏
+reward:
+  alipay: ''
+  wepay: ''
+  tip: 赞赏是不耍流氓的鼓励
+
+## 主题评论
+
+## Valine评论
+valine:
+  enable: false
+  appId: xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz
+  appKey: erIpQac4azoCmgfBB7Dl9maa
+  placeholder: 说点什么吧
+  notify: false
+  verify: false
+  avatar: mm
+  meta: nick,mail
+  pageSize: 10
+
+### 畅言评论(需要ICP备案)
+changyan:
+  enable: false
+  appid:
+  conf:
+
+### 来必力
+livere:
+  enable: false
+  livere_uid: MTAyMC8zMzA1MS85NjEz
+
+## Gitalk评论 github评论
+gitalk:
+  enable: true
+  clientID: 934e6c8b8e5d8796b4c3
+  clientSecret: c6b01f8df89c3a426a0eb019ebe5f71620814aee
+  repo: zhaokejin.github.io
+  owner: zhaokejin
+  admin: zhaokejin
+  perPage:
+  distractionFreeMode: true
+
+### Disqus评论
+disqus:
+  enable: false
+  shortname: snippet
+  count: false
+
+### gitment评论(长期不更新，不建议使用)
+gitment:
+  enable: false
+  owner:
+  repo:
+  client_id:
+  client_secret:
+  perPage: 10
+
+### 友言评论(服务不稳定)
+uyan:
+  enable: false
+  uyan_id: 1966422
+
+
+## 网站访客统计
+visit_counter:
+  site: true
+  page: true
+
+## 网站访问统计分析
+
+### 网盟CNZZ统计
+cnzz_analytics:
+
+### 百度统计
+baidu_analytics: 04983d21727b02deb6771184cf02f865
+
+### 谷歌统计
+google_analytics:
+
+### 腾讯分析
+tencent_analytics:
+
+### 百度站点认证
+baidu_site_verification:
+
+### 百度自动推送
+baidu_push: false
+
+#网站主题配置
+since: 2018 - 2019
+robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
+version: 1.2.3
+
+# 是否开启fork me on github
+fork_me_on_github:
+  enabled: true
+  url: http://github.com/zhaokejin
+
+
+### 涨粉神器开关
+openwrite: false

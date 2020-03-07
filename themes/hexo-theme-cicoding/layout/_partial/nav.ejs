@@ -1,0 +1,82 @@
+<nav class="main-navigation">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <nav class="navbar navbar-default" style="background-color:#fff;border:0;margin-bottom:0"
+                     role="navigation">
+                    <div class="navbar-header">
+<!--                        <button type="button" class="navbar-toggle" data-toggle="collapse"-->
+<!--                                data-target="#navbar-collapse-1">-->
+<!--                            <span class="sr-only">切</span>-->
+<!--                            <span class="icon-bar"></span>-->
+<!--                            <span class="icon-bar"></span>-->
+<!--                            <span class="icon-bar"></span>-->
+<!--                        </button>-->
+                        <a class="logo" href="<%- url_for() %>">
+                            <img src="<%- theme.favicon %>"/>筱进GG的博客
+                        </a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" style="border:0;" id="navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <% theme.menu.forEach(function (item) { %>
+                                <% if(!item.subPages){ %>
+                                    <li>
+                                        <a href="<%- item.url %>" >
+                                            <i class="fa <%- item.icon %>"></i>
+                                            <%= __(item.page + '') %>
+                                        </a>
+                                    </li>
+                                <% }else{ %>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                           data-hover="dropdown">
+                                            <i class="fa <%- item.icon %>"></i>
+                                            <%= __(item.page + '') %>
+                                            <strong class="caret"></strong>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <% item.subPages.forEach(function (subPage) { %>
+                                                <li>
+                                                    <a href="<%- subPage.url %>" target="_blank">
+                                                        <i class="fa <%- subPage.icon %>"></i>
+                                                        <%= __(subPage.page + '') %>
+                                                    </a>
+                                                </li>
+                                            <% }) %>
+                                        </ul>
+                                    </li>
+                                <% } %>
+                            <% }) %>
+                        </ul>
+                        <% if (theme.jsonContent.searchLocal){ %>
+                            <form id="search-form" class="navbar-form navbar-right">
+                                <div class="form-group input-group">
+                                    <input type="text" id="local-search-input" class="form-control"
+                                           placeholder="<%= __('search_placeholder') %>"/>
+                                    <span class="input-group-btn">
+                                        <a class="btn btn-default">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                                <div id="local-search-result" class="local-search-result-cls"></div>
+                            </form>
+                        <% } else if(theme.jsonContent.searchGoogle) { %>
+                            <form class="navbar-form navbar-right">
+                                <%- search_form({'button': '谷歌搜索', 'text': 'Google Search'}) %>
+                            </form>
+                        <% } %>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</nav>
+<% if(theme.fork_me_on_github.enabled){ %>
+    <a href="<%- theme.fork_me_on_github.url %>" target="_blank">
+        <img style="position: absolute; width:100px; top: 0; left: 0; border: 0;"
+             src="/img/fork-me.png"
+             alt="Fork me on GitHub">
+    </a>
+<% } %>
